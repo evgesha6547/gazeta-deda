@@ -1,0 +1,66 @@
+*{box-sizing:border-box}
+:root{
+  --paper:#efe0c4;
+  --ink:#201a15;
+  --accent:#7d201c;
+}
+html,body{margin:0;min-height:100%;background:#17130f;color:#fff;font-family:Arial,Helvetica,sans-serif}
+body{overscroll-behavior:none}
+.app{min-height:100vh;max-width:720px;margin:auto;padding-bottom:76px}
+.topbar{
+  position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;
+  padding:10px 12px;background:rgba(24,19,15,.96);backdrop-filter:blur(10px);
+}
+.brand{font-weight:900;letter-spacing:1px;font-size:15px}
+.issue{font-size:11px;opacity:.7;margin-top:2px}
+.icon-btn{
+  width:38px;height:38px;border:0;border-radius:50%;background:#2d251e;color:#fff;
+  font-size:26px;line-height:1;cursor:pointer
+}
+#shareBtn{margin-left:auto}
+.newspaper-wrap{padding:10px}
+.newspaper{
+  position:relative;width:100%;overflow:hidden;border-radius:4px;
+  box-shadow:0 14px 40px rgba(0,0,0,.45);background:var(--paper)
+}
+.newspaper img{display:block;width:100%;height:auto}
+.hotspot{
+  position:absolute;border:1px solid transparent;background:rgba(255,255,255,0);
+  cursor:pointer;border-radius:6px;transition:.15s
+}
+.hotspot:active,.hotspot:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.35)}
+/* Coordinates are percentages of the supplied newspaper image. */
+.hs-main{left:4%;top:16%;width:92%;height:27%}
+.hs-fact{left:78%;top:43%;width:18%;height:24%}
+.hs-thought{left:3%;top:67%;width:30%;height:12%}
+.hs-advice{left:34%;top:67%;width:31%;height:12%}
+.hs-humor{left:66%;top:67%;width:31%;height:12%}
+.hs-today{left:3%;top:79%;width:31%;height:13%}
+.hs-story{left:34%;top:79%;width:31%;height:13%}
+.hs-poll{left:66%;top:79%;width:31%;height:13%}
+.hint{text-align:center;font-size:13px;opacity:.72;padding:4px 12px 12px}
+.bottom-nav{
+  position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:20;
+  width:min(720px,100%);display:flex;justify-content:space-around;
+  padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(24,19,15,.97);border-top:1px solid #3b3027
+}
+.nav-btn{background:none;border:0;color:#bfb6ad;font-size:18px;display:flex;flex-direction:column;gap:2px;align-items:center;min-width:70px;cursor:pointer}
+.nav-btn span{font-size:10px}
+.nav-btn.active{color:#fff}
+.modal{
+  position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.68);display:none;
+  align-items:flex-end;padding:12px
+}
+.modal.open{display:flex}
+.modal-card{
+  width:min(720px,100%);margin:auto;background:var(--paper);color:var(--ink);
+  border-radius:18px;padding:24px 20px 18px;position:relative;box-shadow:0 20px 60px #000
+}
+.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:32px;color:#5c4b3e;cursor:pointer}
+.modal-kicker{font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
+.modal-card h2{margin:6px 32px 10px 0;font-size:25px;line-height:1.05}
+.modal-card p{font-size:16px;line-height:1.55;margin:0 0 16px}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.action{border:0;border-radius:999px;padding:11px 14px;background:#2b211a;color:#fff;cursor:pointer}
+@media(min-width:720px){.newspaper-wrap{padding:18px}.modal{align-items:center}}
