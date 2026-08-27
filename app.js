@@ -79,7 +79,7 @@ document.getElementById('reactionBtn').addEventListener('click',()=>{
 document.getElementById('shareSectionBtn').addEventListener('click', async ()=>{
   const key = modal.dataset.section || 'main';
   const s = sections[key];
-  const shareText = `${s.title} — «Записки Деда», выпуск №23`;
+  const shareText = `${s.title} — «Записки Деда», выпуск №25`;
   if (navigator.share) {
     try { await navigator.share({title:s.title,text:shareText,url:location.href}); } catch(e){}
   } else {
@@ -90,7 +90,7 @@ document.getElementById('shareSectionBtn').addEventListener('click', async ()=>{
 
 document.getElementById('shareBtn').addEventListener('click', async ()=>{
   if (navigator.share) {
-    try { await navigator.share({title:'Записки Деда — №23',text:'Интерактивный выпуск №23',url:location.href}); } catch(e){}
+    try { await navigator.share({title:'Записки Деда — №25',text:'Интерактивный выпуск №25',url:location.href}); } catch(e){}
   } else {
     await navigator.clipboard?.writeText(location.href);
     alert('Ссылка на газету скопирована');
